@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html ng-app="homiApp">
+<head>
+	<title>Homicide Monitor</title>
+	<meta name="viewport" content="width=device-width ,  initial-scale=1,  maximum-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery.quicksearch.js"></script>
+	<script type="text/javascript" src="js/js_cookkie.js"></script>
+	<script src="js/lib/moment/moment.min.js"></script>
+	<script src="js/lib/Chart.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head> 
+<body id="controller" ng-controller="Ctrl">
+<div id="load"></div>
+<div id="wrapper">
+
+
+	<header>
+		<!-- favotivs, location -->
+		
+		<p id="date" ></p>
+
+		<script>
+			//current date - using moment.js
+			document.getElementById("date").innerHTML = moment().format('dddd') + ", " + moment().format('LL');
+		</script>
+		<h1>{{homiApp.currentCountry}}</h1>
+		<!-- {{getTime();}} -->
+		
+	</header>
+
+	<main>
+
+	<p id="tmp">{{homiApp.temp}}&deg;</p>
+	<table class="table table-striped">
+	<thead>
+		<tr id="categories">
+			<th>Gender</th>
+			<th>Weapon</th>
+			<th>Homicides</th>
+			<th>Rate per</th>
+			<th>Population</th>
+		</tr> 
+	</thead>
+			<tr>
+				<td><img id="gender" ng-src="img/{{genderIcon();}}"></td>
+				<td><img id="weapon" ng-src="img/{{weaponIcon();}}"></td>
+				<td><img src="img/homicides.png"></td>
+				<td><img src="img/rate.png"></td>
+				<td><img src="img/population.png"></td>
+			</tr>
+
+	<tbody>
+		<tr ng-repeat="item in homiApp.items" id="values">
+				<td ng-click="gender()">{{gender();}}%</td>
+				<td>{{weapon();}}%</td>
+				<td>{{commaSeparateNumber(item.homicide);}}</td>
+				<td>{{item.rate}}</td>
+				<td>{{commaSeparateNumber(item.population);}}</td>
+	</tbody>
+	</table>
+	<div id="container">
+		<canvas id="myChart" width="400" height="400"></canvas>
+
+	</div>
+	</main>
+	
+</div>
+
+
+
+<!-- landscape -->
+<div id="wrapperLand"> 
+    <header id="headerLand">
+      <div id="logo"><h1>HOMICIDE MONITOR&deg;</h1></div> 
+      <div id="yearsScala">
+        <section><p>2007</p></section>
+        <section>2008</section>
+        <section>2009</section>
+        <section>2010</section>
+        <section>2011</section>
+        <section>2012</section>
+        <section>2013</section>
+        <section>2014</section>
+        <section>2015</section>
+      </div>
+      <div id="Search"><input id="search" type="text" placeholder="  Homicide around the world"></div> 
+    </header>
+    <main id="main">
+     <div id="left">
+     <p id="tmp2">{{homiApp.temp}}&deg;</p>
+     <h1>{{homiApp.currentCountry}}</h1>
+      </div>
+      <div id="globe"><div id="earth"></div></div>
+
+      <div id="right">
+      <div class="list">
+      	<ul>
+      		<li>Israel</li>
+      		<li>USA</li>
+      		<li>Netherland</li>
+      		<li>South Africa</li>
+      	</ul>
+      </div>
+        <h3>Homicide <br>count</h3>
+        <br>
+		 <h3 ng-repeat="item in homiApp.items" >{{item.homicide}}</h3> 
+		 <br>
+        <h3>Per 100,000 <br>population</h3>
+        <br>
+        <h3 ng-repeat="item in homiApp.items" >{{item.rate}}</h3> 
+      </div>
+    </main>
+    <footer id="footerLand">
+      <section id="PerBorder">Homicides per 100,000 population</section>
+      <section id="NoBorder">No Data</section>
+      <section id="aBorder">0-3.13</section>
+      <section id="bBorder">-5.25</section>
+      <section id="cBorder">-12.5</section>
+      <section id="dBorder">-25</section>
+      <section id="eBorder">-50</section>
+      <section id="fBorder">-100</section>
+      <section id="gBorder">100+</section>
+      <section id="PerBorder">Heating Wave</section>
+    </footer>
+
+
+  </div>  
+
+
+
+
+
+
+	<script>
+	//quicksearch plug-in
+	var qs = $('input#search').quicksearch('div ul li', {
+		'minValLength': 1,
+		'show': function () {
+	    $(this).css("display", "block");
+		},
+		'hide': function () {
+	    $(this).css("display", "none");
+		}
+	});
+	qs.cache();
+
+
+	$("#wrapper").swiperight(function() {
+		angular.element($('#controller')).scope().preCountery(); 
+	});
+	$("#wrapper").swipeleft(function() {
+		angular.element($('#controller')).scope().nextCountery(); 
+	});
+	$.mobile.loading().hide();
+
+	$(window).on("orientationchange",function(){
+    if(window.orientation == 0)
+    {
+     	$('#wrapper').css("display", "block");
+     	$('#wrapperLand').css("display", "none");
+    }
+    else
+    {
+    	$('#wrapper').css("display", "none");
+     	$('#wrapperLand').css("display", "block");
+    }
+  });                   
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="js/homiApp.js"></script>
+</body>
+</html>
+
+

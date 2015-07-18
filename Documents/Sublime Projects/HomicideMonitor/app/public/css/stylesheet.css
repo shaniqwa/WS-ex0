@@ -1,0 +1,288 @@
+* {
+ padding:0px;
+ margin:0px;
+}
+header,section,nav,aside,footer,main {
+ display:block;
+}
+@font-face {
+  font-family: 'DIN-Light';
+  src: url('../FONTS/DIN-Light.otf');
+}
+
+#wrapper{
+	margin: 0 auto;
+	display: none;
+	width:100%;
+	max-width:400px;
+}
+#load{
+	position: relative;
+	width:400px;
+	height:540px;
+	background: url("../img/load.png");
+	z-index: 500;
+	margin: 0 auto;
+}
+
+
+#date, table ,tr,th, h1, #tmp{
+	text-align:  center;
+	margin: 0 auto;
+	font-family: 'DIN-Light';
+}
+h1{
+	color:#247a89;
+	/*margin-top:10px;*/
+}
+#date{
+	color: #247a89;
+	margin-top: 30px;
+	font-size: 11px;
+}
+
+#tmp{
+	font-size: 150px;
+	color: #1cdb9b;
+	padding: 0px;
+	letter-spacing: -13px;
+}
+
+td{
+	padding: 15px 10px 5px 10px;
+}
+#categories{
+	color: #247a89;
+	font-size: 11px;
+}
+#values{
+	color: #142553;
+	font-size: 11px;
+}
+#container{
+	padding:0px;
+	margin: 0 auto;
+	width:100%;
+	max-width: 400px;
+	height:200px;
+}
+#myChart{
+	padding:-10px;
+	width:100%;
+	height: 200px;
+}
+
+#back{
+	float:right;
+}
+
+/*vik*/
+
+#wrapperLand{
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	display: none;
+}
+#headerLand{
+	width: 100%;
+	margin-top: 10px;
+	/*height: 5px;*/
+}
+#logo{
+	float: left;
+	width: 25%;
+	font-size: 6px;
+	font-weight: bold;
+	margin-top: 8px;
+	color:#142553;
+}
+#land{
+	margin-right: 10px;
+}
+#yearsScala{
+	float: left;
+	width: 45%;
+}
+#yearsScala section{
+	margin-right: 3px;
+	float: left;
+	width: 9.6%;
+	border-bottom-style: solid;
+	line-height: 170%;
+	font-family: 'DIN-Light';
+	font-size: 9px;
+	color: #142553;
+	border-bottom-width: 5px;
+	border-bottom-color:#1e1f2e; 
+
+}
+#yearsScala section p {
+	margin: 0 auto;
+}
+#Search{
+	float: right;
+	width: 30%;
+}
+#Search input{
+	float: left;
+	width: 95%;
+	height: 20px;
+	background-color: #1e1f2e;
+	border: none;
+}
+
+::-webkit-input-placeholder {
+   color: #1cbb9b;
+   font-family: 'DIN-Light';
+}
+#Search input[type="text"]{
+	color: #1cbb9b;
+}
+*:focus {
+    outline: 0;
+}
+
+
+.list{
+	display: none;
+	position: absolute;
+	width:171px;
+	height:230px;
+	font-size: 12px;
+	line-height: 25px;
+	z-index: 3;
+	margin-bottom: 40px;
+	background-color: #1e1f2e;
+	right:-1px;
+	top:-24px;
+}
+
+
+.list ul{
+	color:#f2d03b;
+   	font-family: 'DIN-Light';
+	list-style-type: none;
+	text-align: left;
+	float:left;
+	margin-left: 20px;
+}
+
+
+#main{
+	width: 100%;
+	height: 230px;
+	float: left;
+}
+#left{
+	float: left;
+	width:150px;
+	margin-left: 15px;
+}
+#main #left h1{
+	font-size: 40px;
+	color: #1cdb9b;
+	font-family: 'DIN-Light';
+}
+#main #left h2{
+	font-size: 40px;
+	color: #1cdb9b;
+	letter-spacing: -2px;	
+	font-family: 'DIN-Light';
+	margin-right: 15%;
+}
+#globe{
+	width: 250px;
+	height: 250px;
+	display: inline-block;
+	margin: 0 auto;
+}
+#globe #earth {
+	margin: 0 auto;
+	margin-top: 4%;
+	width: 80%;
+	height: 80%;
+    background: url("../img/earth.png");
+	border-radius: 50%;
+	/*background-size: 800px;*/
+/*	box-shadow: inset 16px 0 40px 6px rgb(0, 0, 0),
+	inset -3px 0 6px 2px rgba(255, 255, 255, 0.2);*/
+	-webkit-animation-name: rotate;
+	-webkit-animation-duration: 12s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes rotate {
+  from { background-position-x: 0px; }
+  to { background-position-x: 210px; }
+}
+#right{
+	position: relative;
+	float: right;
+	margin-right: 10px;
+	margin-top: 20px;
+	/*background-color: blue;*/
+
+}
+#main #right h3{
+	font-size: 15px;
+	color: #f2d03b;
+	direction: rtl;
+	font-family: 'DIN-Light';
+}
+#footerLand{
+	width: 100%;
+	height: 10vh;
+	font-size: 8px;
+}
+#footerLand section{
+	margin-left: 3px;
+	float: left;
+	width: 6.2%;
+	border-top-style: solid;
+	line-height: 170%;
+	font-family: 'DIN-Light';
+	color: #1e1f2e;
+	border-top-width: 6px;
+}
+#PerBorder{
+	width: 22% !important;
+	border-top-color:#1e1f2e; 
+}
+#NoBorder{
+	border-top-color:#5f476b; 	
+}
+#aBorder{
+	border-top-color:#b1ccbd; 	
+}
+#bBorder{
+	border-top-color:#5bc2a6; 	
+}
+#cBorder{
+	border-top-color:#1cba98; 	
+}
+#dBorder{
+	border-top-color:#239991; 	
+}
+#eBorder{
+	border-top-color:#247a87; 	
+}
+#fBorder{
+	border-top-color:#19496e; 	
+}
+#gBorder{
+	border-top-color:#142652; 	
+}
+#tmp2{
+	font-family: 'DIN-Light';
+	font-size: 80px;
+	color: #1cdb9b;
+	padding: 0px;
+	letter-spacing: -3px;
+}
+#left h1{
+	font-size: 25px !important;
+	margin-top: -10px !important;
+	float: left;
+}

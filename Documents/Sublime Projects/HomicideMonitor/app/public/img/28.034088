@@ -1,0 +1,33 @@
+[
+    {
+        "temperature": 21.79,
+        "time": "NaN:00"
+    },
+    {
+        "time": "13:00",
+        "icon": "clear-day",
+        "temperature": 21.38
+    },
+    {
+        "time": "16:00",
+        "icon": "clear-night",
+        "temperature": 18.16
+    },
+    {
+        "time": "19:00",
+        "icon": "clear-night",
+        "temperature": 15.27
+    },
+    {
+        "time": "22:00",
+        "icon": "clear-night",
+        "precipType": "rain",
+        "temperature": 12.91
+    },
+    {
+        "time": "1:00",
+        "icon": "partly-cloudy-night",
+        "precipType": "rain",
+        "temperature": 9.15
+    }
+]
